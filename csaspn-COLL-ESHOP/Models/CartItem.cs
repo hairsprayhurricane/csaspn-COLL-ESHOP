@@ -1,4 +1,6 @@
-﻿namespace OnlineStore.Models
+﻿using csaspn_COLL_ESHOP.Models;
+
+namespace csaspn_COLL_ESHOP.Models
 {
     public class CartItem
     {

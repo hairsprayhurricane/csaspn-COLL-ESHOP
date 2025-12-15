@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OnlineStore.Models
+namespace csaspn_COLL_ESHOP.Models
 {
     public class Product
     {
