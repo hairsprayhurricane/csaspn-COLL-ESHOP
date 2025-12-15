@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:51:31.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:50:58.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T14:47:23.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:40:06.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Program.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Program.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Program.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:40:01.814Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
