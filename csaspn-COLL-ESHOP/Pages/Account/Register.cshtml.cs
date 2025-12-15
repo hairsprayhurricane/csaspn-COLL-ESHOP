@@ -39,7 +39,7 @@ namespace csaspn_COLL_ESHOP.Pages.Account
             public string Email { get; set; }
 
             [Required(ErrorMessage = "Пароль обязателен")]
-            [StringLength(100, ErrorMessage = "Пароль должен содержать минимум {2} и максимум {1} символов.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "Пароль должен содержать минимум 1 символов.", MinimumLength = 1)]
             [DataType(DataType.Password)]
             [Display(Name = "Пароль")]
             public string Password { get; set; }
