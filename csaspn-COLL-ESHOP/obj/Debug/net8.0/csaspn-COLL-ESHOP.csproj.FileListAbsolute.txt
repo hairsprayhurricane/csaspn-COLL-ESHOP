@@ -257,4 +257,5 @@ C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\obj\Debug\net8.0
 C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\obj\Debug\net8.0\csaspn-COLL-ESHOP.pdb
 C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\obj\Debug\net8.0\csaspn-COLL-ESHOP.genruntimeconfig.cache
 C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\obj\Debug\net8.0\ref\csaspn-COLL-ESHOP.dll
+C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\bin\Debug\net8.0\global.json
 C:\Users\trued\source\repos\csaspn-COLL-ESHOP\csaspn-COLL-ESHOP\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

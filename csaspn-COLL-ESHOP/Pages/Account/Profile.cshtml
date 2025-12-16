@@ -1,0 +1,71 @@
+@page
+@model ProfileModel
+@{
+    ViewData["Title"] = "Личный кабинет";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Личный кабинет</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                @if (!string.IsNullOrEmpty(Model.AvatarUrl))
+                                {
+                                    <img src="@Model.AvatarUrl" class="img-fluid rounded-circle" alt="Profile Image" style="width: 150px; height: 150px; object-fit: cover;">
+                                }
+                                else
+                                {
+                                    <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 150px; height: 150px; margin: 0 auto; font-size: 48px;">
+                                        @Model.Initials
+                                    </div>
+                                }
+                                <div class="mt-3">
+                                    <a href="/Account/Manage/ProfileSettings" class="btn btn-outline-primary btn-sm">Редактировать профиль</a>
+                                    <a href="/Account/Manage/ChangePassword" class="btn btn-outline-secondary btn-sm mt-1">Изменить пароль</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Имя:</label>
+                                <p class="form-control-plaintext">@(string.IsNullOrEmpty(Model.FirstName) ? "Не указано" : Model.FirstName)</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Фамилия:</label>
+                                <p class="form-control-plaintext">@(string.IsNullOrEmpty(Model.LastName) ? "Не указана" : Model.LastName)</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Имя пользователя:</label>
+                                <p class="form-control-plaintext">@Model.Username</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Email:</label>
+                                <p class="form-control-plaintext">@Model.Email</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Номер телефона:</label>
+                                <p class="form-control-plaintext">@(string.IsNullOrEmpty(Model.PhoneNumber) ? "Не указан" : Model.PhoneNumber)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">История заказов</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted">У вас пока нет заказов.</p>
+                            <a href="/" class="btn btn-primary">Вернуться к покупкам</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

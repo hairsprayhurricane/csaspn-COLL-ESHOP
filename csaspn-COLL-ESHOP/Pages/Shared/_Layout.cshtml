@@ -29,13 +29,20 @@
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Account/Manage/Index" title="Управление">Привет, @User.Identity?.Name!</a>
-                            </li>
-                            <li class="nav-item">
-                                <form class="form-inline" asp-area="" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
-                                    <button type="submit" class="nav-link btn btn-link text-dark">Выйти</button>
-                                </form>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @User.Identity?.Name
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-page="/Account/Profile">Профиль</a></li>
+                                    <li><a class="dropdown-item" asp-page="/Account/Manage/ProfileSettings">Настройки профиля</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <form class="form-inline" asp-area="" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                            <button type="submit" class="dropdown-item">Выйти</button>
+                                        </form>
+                                    </li>
+                                </ul>
                             </li>
                         }
                         else

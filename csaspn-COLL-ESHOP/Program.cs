@@ -15,8 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Configure Identity
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
     // Password settings
-    options.Password.RequireDigit = true;
-    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequiredLength = 1;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireLowercase = false;

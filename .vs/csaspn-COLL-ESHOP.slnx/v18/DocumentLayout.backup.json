@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\migrations\\20251215160532_initialidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\migrations\\20251215160532_initialidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\global.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\account\\manage\\profilesettings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\account\\manage\\profilesettings.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\account\\manage\\changepassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\account\\manage\\changepassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\account\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\account\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -27,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|c:\\users\\trued\\source\\repos\\csaspn-coll-eshop\\csaspn-coll-eshop\\csaspn-coll-eshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{57C5BB71-985A-378F-3BA9-400C46681BB8}|csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj|solutionrelative:csaspn-coll-eshop\\csaspn-coll-eshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
@@ -50,11 +78,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20251215160532_InitialIdentitySchema.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Migrations\\20251215160532_InitialIdentitySchema.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Migrations\\20251215160532_InitialIdentitySchema.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Migrations\\20251215160532_InitialIdentitySchema.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Migrations\\20251215160532_InitialIdentitySchema.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:57:20.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Models\\CartItem.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:57:13.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:53:28.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "global.json",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\global.json",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\global.json",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\global.json",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\global.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-16T15:45:19.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProfileSettings.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ProfileSettings.cshtml.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ProfileSettings.cshtml.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ProfileSettings.cshtml.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ProfileSettings.cshtml.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAiwL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T15:13:45.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\appsettings.Development.json",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\appsettings.Development.json",
@@ -66,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Account\\Register.cshtml.cs",
@@ -74,12 +167,11 @@
               "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Account\\Register.cshtml.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAewEQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T15:56:15.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T15:56:15.49Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Account\\Login.cshtml.cs",
@@ -91,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\appsettings.json",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\appsettings.json",
@@ -103,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "csaspn-COLL-ESHOP.csproj",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP.csproj",
@@ -115,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml.cs",
@@ -127,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Index.cshtml",
@@ -139,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Privacy.cshtml",
@@ -151,19 +243,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "csaspn-COLL-ESHOP\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA0AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T14:40:06.909Z"
+              "WhenOpened": "2025-12-15T14:40:06.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:34:19.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChangePassword.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
+              "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
+              "ToolTip": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
+              "RelativeToolTip": "csaspn-COLL-ESHOP\\Pages\\Account\\Manage\\ChangePassword.cshtml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:34:34.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\trued\\source\\repos\\csaspn-COLL-ESHOP\\csaspn-COLL-ESHOP\\Program.cs",
               "RelativeDocumentMoniker": "csaspn-COLL-ESHOP\\Program.cs",

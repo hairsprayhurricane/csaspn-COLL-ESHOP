@@ -1,0 +1,109 @@
+@page
+@using csaspn_COLL_ESHOP.Areas.Identity.Pages.Account.Manage
+@model ProfileSettingsModel
+@{
+    ViewData["Title"] = "Профиль";
+    ViewData["ActivePage"] = "ProfileSettings";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>@ViewData["Title"]</h4>
+        @if (TempData["StatusMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                @TempData["StatusMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        else if (!string.IsNullOrEmpty(Model.StatusMessage))
+        {
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                @Model.StatusMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        
+        <div class="text-center mb-3">
+            @if (!string.IsNullOrEmpty(Model.AvatarUrl))
+            {
+                <img src="@Model.AvatarUrl" class="img-thumbnail" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;" alt="Profile Picture" />
+            }
+            else
+            {
+                <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 150px; height: 150px; margin: 0 auto;">
+                    <span style="font-size: 48px;">@Model.Initials</span>
+                </div>
+            }
+        </div>
+        
+        <form id="profile-form" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Input.FirstName" class="form-label">Имя</label>
+                <input asp-for="Input.FirstName" class="form-control" />
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Input.LastName" class="form-label">Фамилия</label>
+                <input asp-for="Input.LastName" class="form-control" />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Input.PhoneNumber" class="form-label">Номер телефона (необязательно)</label>
+                <input asp-for="Input.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group mb-3">
+                <label asp-for="Input.AvatarFile" class="form-label">Аватар профиля (необязательно)</label>
+                <input type="file" 
+                       class="form-control" 
+                       asp-for="Input.AvatarFile"
+                       accept="image/jpeg,image/png,image/gif" />
+                <span asp-validation-for="Input.AvatarFile" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+        </form>
+
+        <div class="mt-4">
+            <a class="btn btn-outline-primary" asp-page="./ChangePassword">Изменить пароль</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Show image preview when a new avatar is selected
+        document.getElementById('Input_AvatarFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.createElement('img');
+                    preview.src = e.target.result;
+                    preview.style.maxWidth = '200px';
+                    preview.style.marginTop = '10px';
+                    
+                    const existingPreview = document.getElementById('avatar-preview');
+                    if (existingPreview) {
+                        existingPreview.remove();
+                    }
+                    
+                    const previewContainer = document.createElement('div');
+                    previewContainer.id = 'avatar-preview';
+                    previewContainer.appendChild(preview);
+                    
+                    const fileInput = document.querySelector('.form-group.mb-3:last-child');
+                    fileInput.appendChild(previewContainer);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+}
