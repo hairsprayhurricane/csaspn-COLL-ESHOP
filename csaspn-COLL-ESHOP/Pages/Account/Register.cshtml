@@ -1,46 +1,103 @@
 @page
 @model RegisterModel
+
 @{
-    ViewData["Title"] = "Регистрация";
+    ViewData["Title"] = "Создать аккаунт";
+    Layout = "_Layout";
 }
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h1 class="text-center mb-4">@ViewData["Title"]</h1>
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2 class="text-center mb-4">Создайте новую учетную запись</h2>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email">Email</label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" asp-append-version="true" />
+}
+
+<div class="auth-container">
+    <div class="container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Присоединяйтесь к нам</h1>
+                <p class="mb-0">Создайте аккаунт, чтобы начать покупки</p>
             </div>
-            
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="пароль" />
-                <label asp-for="Input.Password">Пароль</label>
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="auth-body">
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" 
+                               autocomplete="username" aria-required="true" 
+                               placeholder="name@example.com" />
+                        <label asp-for="Input.Email">Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger small"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" class="form-control" 
+                               autocomplete="new-password" aria-required="true" 
+                               placeholder="пароль" />
+                        <label asp-for="Input.Password">Пароль</label>
+                        <span asp-validation-for="Input.Password" class="text-danger small"></span>
+                        <div class="form-text small text-muted mt-1">
+                            Минимум 6 символов, включая цифры и буквы
+                        </div>
+                    </div>
+                    
+                    <div class="form-floating mb-4">
+                        <input asp-for="Input.ConfirmPassword" class="form-control" 
+                               autocomplete="new-password" aria-required="true" 
+                               placeholder="подтвердите пароль" />
+                        <label asp-for="Input.ConfirmPassword">Подтвердите пароль</label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                            <label class="form-check-label small" for="termsCheck">
+                                Я согласен с <a href="#" class="text-decoration-none">условиями использования</a> 
+                                и <a href="#" class="text-decoration-none">политикой конфиденциальности</a>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="registerSubmit" type="submit" class="btn btn-auth w-100 py-3 mb-3">
+                        <i class="fas fa-user-plus me-2"></i>Зарегистрироваться
+                    </button>
+                    
+                    <div class="divider">или зарегистрируйтесь через</div>
+                    
+                    <div class="social-login">
+                        <button type="button" class="btn btn-google w-100 mb-2">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="btn btn-facebook w-100 mb-3">
+                            <i class="fab fa-facebook-f me-2"></i>Facebook
+                        </button>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <p class="mb-0">
+                            Уже есть аккаунт? 
+                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" 
+                               class="fw-bold text-decoration-none">
+                                Войти
+                            </a>
+                        </p>
+                    </div>
+                </form>
             </div>
-            
-            <div class="form-floating mb-3">
-                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="пароль" />
-                <label asp-for="Input.ConfirmPassword">Подтвердите пароль</label>
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Зарегистрироваться</button>
-            
-            <div class="mt-3 text-center">
-                <p>
-                    Уже есть аккаунт? <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Войти</a>
-                </p>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Add animation to form elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.form-control');
+            inputs.forEach((input, index) => {
+                input.style.animationDelay = `${index * 0.1}s`;
+                input.classList.add('animate__animated', 'animate__fadeInUp');
+            });
+        });
+    </script>
 }
