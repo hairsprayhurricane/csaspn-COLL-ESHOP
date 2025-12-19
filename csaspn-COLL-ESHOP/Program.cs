@@ -1,7 +1,10 @@
 using csaspn_COLL_ESHOP.Data;
 using csaspn_COLL_ESHOP.Models;
+using csaspn_COLL_ESHOP.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using csaspn_COLL_ESHOP.Migrations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,7 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
     // SignIn settings
     options.SignIn.RequireConfirmedAccount = false;
 })
+.AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
@@ -46,7 +50,24 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
 });
 
+// Add HTTP context accessor
+builder.Services.AddHttpContextAccessor();
+
+// Register cart service
+builder.Services.AddScoped<ICartService, CartService>();
+
+// Add session support
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromDays(1);
+});
+
 builder.Services.AddRazorPages();
+
+// Add API controllers
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -61,11 +82,22 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+// Add session middleware
+app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+// Map API controllers
+app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    await DbInitializer.Initialize(scope.ServiceProvider);
+}
 
 app.Run();

@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "ContainingType": "csaspn_COLL_ESHOP.Controllers.Api.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/cart/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "csaspn_COLL_ESHOP.Controllers.Api.AddToCartRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "csaspn_COLL_ESHOP.Controllers.Api.CartController",
+    "Method": "GetCartItemCount",
+    "RelativePath": "api/cart/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "csaspn_COLL_ESHOP.Controllers.Api.CartController",
+    "Method": "RemoveFromCart",
+    "RelativePath": "api/cart/remove/{cartItemId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItemId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "csaspn_COLL_ESHOP.Controllers.Api.CartController",
+    "Method": "UpdateCartItem",
+    "RelativePath": "api/cart/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "csaspn_COLL_ESHOP.Controllers.Api.UpdateCartItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

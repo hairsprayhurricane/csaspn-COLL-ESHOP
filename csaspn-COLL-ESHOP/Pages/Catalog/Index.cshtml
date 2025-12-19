@@ -1,0 +1,245 @@
+@page "{handler?}"
+@model csaspn_COLL_ESHOP.Pages.Catalog.IndexModel
+@{
+    ViewData["Title"] = "Каталог товаров";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sidebar with filters (visible on desktop) -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Фильтры</h5>
+                </div>
+                <div class="card-body">
+                    <form method="get" id="filterForm">
+                        <div class="mb-3">
+                            <label for="searchString" class="form-label">Поиск</label>
+                            <input type="text" class="form-control" id="searchString" name="searchString" value="@Model.SearchString" placeholder="Название или описание">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="categoryId" class="form-label">Категория</label>
+                            <select class="form-select" id="categoryId" name="categoryId" onchange="this.form.submit()">
+                                <option value="">Все категории</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id" selected="@(Model.CategoryId == category.Id)">@category.Name</option>
+                                }
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100">Применить фильтры</button>
+                        <a href="/Catalog" class="btn btn-outline-secondary w-100 mt-2">Сбросить</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="col-lg-9">
+            <!-- Notification Area -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show mb-3" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show mb-3" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Каталог товаров</h2>
+                <div class="d-flex">
+                    <button class="btn btn-outline-primary d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtersOffcanvas">
+                        <i class="bi bi-funnel"></i> Фильтры
+                    </button>
+                </div>
+            </div>
+
+            @if (!Model.Products.Any())
+            {
+                <div class="alert alert-info">
+                    По вашему запросу товары не найдены. Попробуйте изменить параметры фильтрации.
+                </div>
+            }
+            else
+            {
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    @foreach (var product in Model.Products)
+                    {
+                        <div class="col">
+                            <div class="card h-100 product-card">
+                                @if (!string.IsNullOrEmpty(product.ImageUrl))
+                                {
+                                    <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover;">
+                                }
+                                <div class="card-body">
+                                    <span class="badge bg-secondary mb-2">@product.Category?.Name</span>
+                                    <h5 class="card-title">@product.Name</h5>
+                                    <p class="card-text text-muted">
+                                        @(product.Description?.Length > 100 ? product.Description.Substring(0, 100) + "..." : product.Description)
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="h5 mb-0">@product.Price.ToString("C")</span>
+                                        @if (product.StockQuantity > 0)
+                                        {
+                                            <form method="post" asp-page-handler="AddToCart" class="d-inline">
+                                                <input type="hidden" name="productId" value="@product.Id" />
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-cart-plus"></i> В корзину
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <button class="btn btn-outline-secondary" disabled>
+                                                Нет в наличии
+                                            </button>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <small class="text-muted">
+                                        @if (product.StockQuantity > 0)
+                                        {
+                                            <span class="text-success">В наличии: @product.StockQuantity шт.</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Нет в наличии</span>
+                                        }
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Mobile filters offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="filtersOffcanvas" aria-labelledby="filtersOffcanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="filtersOffcanvasLabel">Фильтры</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form method="get" id="mobileFilterForm">
+            <div class="mb-3">
+                <label for="mobileSearchString" class="form-label">Поиск</label>
+                <input type="text" class="form-control" id="mobileSearchString" name="searchString" value="@Model.SearchString" placeholder="Название или описание">
+            </div>
+            
+            <div class="mb-3">
+                <label for="mobileCategoryId" class="form-label">Категория</label>
+                <select class="form-select" id="mobileCategoryId" name="categoryId">
+                    <option value="">Все категории</option>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <option value="@category.Id" selected="@(Model.CategoryId == category.Id)">@category.Name</option>
+                    }
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Применить</button>
+            <a href="/Catalog" class="btn btn-outline-secondary w-100 mt-2">Сбросить</a>
+        </form>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .product-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card .card-text {
+            flex-grow: 1;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+        }
+        
+        /* Responsive styles */
+        @@media (max-width: 991.98px) {
+            .card-img-top {
+                height: 180px;
+            }
+        }
+        
+        @@media (max-width: 767.98px) {
+            .card-img-top {
+                height: 160px;
+            }
+        }
+        
+        @@media (max-width: 575.98px) {
+            .card-img-top {
+                height: 200px;
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Handle add to cart button click
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-product-id');
+                // Here you would typically make an AJAX call to add the item to the cart
+                // For now, we'll just show a success message
+                const toast = new bootstrap.Toast(document.getElementById('addedToCartToast'));
+                toast.show();
+                
+                // Update cart count in the navbar
+                const cartCount = document.getElementById('cartCount');
+                if (cartCount) {
+                    const currentCount = parseInt(cartCount.textContent) || 0;
+                    cartCount.textContent = currentCount + 1;
+                }
+            });
+        });
+        
+        // Auto-submit search when typing (with debounce)
+        let searchTimeout;
+        document.getElementById('searchString')?.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                document.getElementById('filterForm').submit();
+            }, 500);
+        });
+        
+        document.getElementById('mobileSearchString')?.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                document.getElementById('mobileFilterForm').submit();
+            }, 500);
+        });
+    </script>
+}

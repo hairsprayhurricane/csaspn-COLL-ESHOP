@@ -1,0 +1,134 @@
+@page
+@model csaspn_COLL_ESHOP.Pages.Admin.Products.IndexModel
+@{
+    ViewData["Title"] = "Управление товарами";
+}
+
+@section Scripts {
+    <script>
+        function confirmDelete(categoryId, categoryName) {
+            if (confirm(`Вы уверены, что хотите удалить категорию "${categoryName}"?`)) {
+                document.getElementById('deleteCategoryId').value = categoryId;
+                document.getElementById('deleteCategoryForm').submit();
+            }
+        }
+    </script>
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>@ViewData["Title"]</h2>
+        <div>
+            <button class="btn btn-outline-secondary me-2" type="button" data-bs-toggle="collapse" data-bs-target="#categorySection" aria-expanded="false" aria-controls="categorySection">
+                <i class="fas fa-tags"></i> Управление категориями
+            </button>
+            <a asp-page="Create" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Добавить товар
+            </a>
+        </div>
+    </div>
+
+    <!-- Category Management Section -->
+    <div class="collapse mb-4" id="categorySection">
+        <div class="card">
+            <div class="card-header bg-light">
+                <h5 class="mb-0">Управление категориями</h5>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-page-handler="AddCategory" class="row g-3 mb-4">
+                    @Html.AntiForgeryToken()
+                    <div class="col-md-5">
+                        <label for="name" class="form-label">Название категории</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Добавить
+                        </button>
+                    </div>
+                </form>
+
+                @if (Model.Categories.Any())
+                {
+                    <h6>Существующие категории:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <tbody>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <tr>
+                                        <td>@category.Name</td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-outline-danger" 
+                                                    onclick="confirmDelete('@category.Id', '@category.Name')">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info mb-0">
+                        Нет категорий. Добавьте первую категорию с помощью формы выше.
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <form id="deleteCategoryForm" method="post" asp-page-handler="DeleteCategory" class="d-none">
+        <input type="hidden" id="deleteCategoryId" name="id" />
+    </form>
+
+    @if (Model.Products.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Изображение</th>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Цена</th>
+                        <th>На складе</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model.Products)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@product.ImageUrl" alt="@product.Name" style="max-height: 50px;" />
+                            </td>
+                            <td>@product.Name</td>
+                            <td>@product.Category?.Name</td>
+                            <td>@product.Price.ToString("C")</td>
+                            <td>@product.StockQuantity</td>
+                            <td>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <a asp-page="./Edit" asp-route-id="@product.Id" class="btn btn-outline-primary">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a asp-page="./Delete" asp-route-id="@product.Id" class="btn btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            Товары не найдены. Начните с добавления нового товара.
+        </div>
+    }
+</div>

@@ -1,0 +1,80 @@
+@page
+@model csaspn_COLL_ESHOP.Pages.Admin.Products.CreateModel
+@{
+    ViewData["Title"] = "Добавить товар";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h4>@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Product.Name" class="form-label"></label>
+                            <input asp-for="Product.Name" class="form-control" />
+                            <span asp-validation-for="Product.Name" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Product.Description" class="form-label"></label>
+                            <textarea asp-for="Product.Description" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Product.Description" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Product.Price" class="form-label"></label>
+                                    <div class="input-group">
+                                        <input asp-for="Product.Price" class="form-control" />
+                                        <span class="input-group-text">₽</span>
+                                    </div>
+                                    <span asp-validation-for="Product.Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Product.StockQuantity" class="form-label"></label>
+                                    <input asp-for="Product.StockQuantity" class="form-control" />
+                                    <span asp-validation-for="Product.StockQuantity" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Product.CategoryId" class="form-label"></label>
+                            <select asp-for="Product.CategoryId" class="form-select" asp-items="ViewBag.Categories">
+                                <option value="">-- Выберите категорию --</option>
+                            </select>
+                            <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Product.ImageUrl" class="form-label"></label>
+                            <input asp-for="Product.ImageUrl" class="form-control" placeholder="URL изображения" />
+                            <div class="form-text">Оставьте пустым для использования изображения по умолчанию</div>
+                            <span asp-validation-for="Product.ImageUrl" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-page="Index" class="btn btn-outline-secondary me-md-2">Назад к списку</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Сохранить
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,10 +1,139 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Главная";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.IsAuthenticated)
+{
+    <div class="container mt-4">
+        <h2 class="mb-4">Новинки</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            @foreach (var product in Model.Products)
+            {
+                var cartItem = Model.CartItems?.FirstOrDefault(ci => ci.ProductId == product.Id);
+                var inCart = cartItem != null && cartItem.Quantity > 0;
+                var quantity = cartItem?.Quantity ?? 0;
+
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        @if (!string.IsNullOrEmpty(product.ImageUrl))
+                        {
+                            <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover;">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text text-muted">@(product.Description?.Length > 100 ? product.Description.Substring(0, 100) + "..." : product.Description)</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="h5 mb-0">@product.Price.ToString("C")</span>
+                                    @if (product.StockQuantity <= 5 && product.StockQuantity > 0)
+                                    {
+                                        <small class="d-block text-danger">Осталось: @product.StockQuantity шт.</small>
+                                    }
+                                </div>
+                                @if (product.StockQuantity > 0)
+                                {
+                                    <div class="d-flex align-items-center">
+                                        @if (inCart)
+                                        {
+                                            <form method="post" asp-page-handler="UpdateCart" class="d-inline">
+                                                <input type="hidden" name="productId" value="@product.Id" />
+                                                <input type="hidden" name="change" value="-1" />
+                                                <button type="submit" class="btn btn-sm btn-outline-secondary" @(quantity <= 1 ? "disabled" : "")>
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                            </form>
+                                            <span class="mx-2">@quantity</span>
+                                            <form method="post" asp-page-handler="UpdateCart" class="d-inline">
+                                                <input type="hidden" name="productId" value="@product.Id" />
+                                                <input type="hidden" name="change" value="1" />
+                                                <button type="submit" class="btn btn-sm btn-outline-primary" @(product.StockQuantity <= quantity ? "disabled" : "")>
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <form method="post" asp-page-handler="AddToCart" class="d-inline">
+                                                <input type="hidden" name="productId" value="@product.Id" />
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="fas fa-cart-plus"></i> В корзину
+                                                </button>
+                                            </form>
+                                        }
+                                    </div>
+                                }
+                                else
+                                {
+                                    <button class="btn btn-outline-secondary" disabled>
+                                        Нет в наличии
+                                    </button>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4 mb-4">Добро пожаловать в наш магазин</h1>
+                <p class="lead mb-4">Войдите или зарегистрируйтесь, чтобы увидеть наши товары и сделать заказ.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a class="btn btn-primary btn-lg" href="/Identity/Account/Login">Войти</a>
+                    <a class="btn btn-outline-primary btn-lg" href="/Identity/Account/Register">Зарегистрироваться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto">Успех</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["SuccessMessage"]
+            </div>
+        </div>
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white">
+                <strong class="me-auto">Ошибка</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["ErrorMessage"]
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // Auto-hide toasts after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            var toastList = toastElList.map(function(toastEl) {
+                return new bootstrap.Toast(toastEl, { delay: 5000 });
+            });
+            toastList.forEach(toast => toast.show());
+        });
+    </script>
+}

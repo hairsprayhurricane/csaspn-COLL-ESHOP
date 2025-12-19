@@ -1,0 +1,16 @@
+@model int
+
+<a class="nav-link" href="/Cart">
+    <i class="bi bi-cart3"></i>
+    @if (Model > 0)
+    {
+        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            @Model
+            <span class="visually-hidden">товаров в корзине</span>
+        </span>
+    }
+    else
+    {
+        <span id="cartCount" class="visually-hidden">0</span>
+    }
+</a>

@@ -1,0 +1,198 @@
+@page
+@model csaspn_COLL_ESHOP.Pages.Cart.IndexModel
+@{
+    ViewData["Title"] = "Корзина";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Корзина</h1>
+            
+            @if (!Model.Cart.Items.Any())
+            {
+                <div class="alert alert-info">
+                    <p class="mb-0">Ваша корзина пуста. <a href="/Catalog">Перейти в каталог</a></p>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="table-light">
+                            <tr>
+                                <th style="width: 100px;">Фото</th>
+                                <th>Товар</th>
+                                <th class="text-center">Цена</th>
+                                <th class="text-center">Количество</th>
+                                <th class="text-end">Сумма</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Cart.Items)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.ImageUrl" alt="@item.ProductName" class="img-fluid" style="max-height: 80px;">
+                                    </td>
+                                    <td>
+                                        <h5 class="h6 mb-1">@item.ProductName</h5>
+                                        <small class="text-muted">Код: @item.ProductId</small>
+                                    </td>
+                                    <td class="align-middle text-center">@item.Price.ToString("C")</td>
+                                    <td class="align-middle text-center" style="width: 200px;">
+                                        <form method="post" asp-page-handler="UpdateQuantity" class="d-flex align-items-center">
+                                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-secondary" 
+                                                    name="quantity" 
+                                                    value="@(item.Quantity - 1)"
+                                                    @(item.Quantity <= 1 ? "disabled" : "")>
+                                                <i class="bi bi-dash"></i>
+                                            </button>
+                                            <input type="number" 
+                                                   name="quantity" 
+                                                   value="@item.Quantity" 
+                                                   min="1" 
+                                                   max="@item.StockQuantity"
+                                                   class="form-control form-control-sm text-center mx-2" 
+                                                   style="width: 60px;"
+                                                   onchange="this.form.submit()" />
+                                            <button type="submit" class="btn btn-sm btn-outline-secondary" 
+                                                    name="quantity" 
+                                                    value="@(item.Quantity + 1)"
+                                                    @(item.Quantity >= item.StockQuantity ? "disabled" : "")>
+                                                <i class="bi bi-plus"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="align-middle text-end">@item.Total.ToString("C")</td>
+                                    <td class="align-middle text-end">
+                                        <form method="post" asp-page-handler="RemoveFromCart" class="d-inline">
+                                            <input type="hidden" name="cartItemId" value="@item.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot class="table-light">
+                            <tr>
+                                <td colspan="4" class="text-end fw-bold">Итого:</td>
+                                <td class="text-end fw-bold">@Model.Cart.Total.ToString("C")</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="/Catalog" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1"></i> Продолжить покупки
+                    </a>
+                    <form method="post" asp-page="/Checkout/Index" class="d-inline">
+                        <button type="submit" class="btn btn-primary">
+                            Оформить заказ <i class="bi bi-arrow-right ms-1"></i>
+                        </button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Toast for cart updates -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Корзина обновлена</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Товар успешно обновлен в корзине
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .quantity-input {
+            width: 70px;
+            text-align: center;
+        }
+        
+        .img-thumbnail {
+            max-height: 80px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+        }
+        
+        /* Responsive styles */
+        @@media (max-width: 767.98px) {
+            .table thead {
+                display: none;
+            }
+            
+            .table, .table tbody, .table tr, .table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .table tr {
+                margin-bottom: 1rem;
+                border: 1px solid #dee2e6;
+                border-radius: 0.25rem;
+                overflow: hidden;
+            }
+            
+            .table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border-bottom: 1px solid #dee2e6;
+            }
+            
+            .table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 45%;
+                text-align: left;
+                font-weight: bold;
+            }
+            
+            .table td:first-child {
+                padding-left: 1rem;
+                text-align: center;
+            }
+            
+            .table td:first-child::before {
+                display: none;
+            }
+            
+            .table td:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Simple script to show toast if it exists
+        document.addEventListener('DOMContentLoaded', function() {
+            const toastEl = document.getElementById('cartToast');
+            if (toastEl) {
+                const toast = new bootstrap.Toast(toastEl);
+                toast.show();
+                
+                // Auto-hide after 3 seconds
+                setTimeout(() => {
+                    toast.hide();
+                }, 3000);
+            }
+        });
+    </script>
+}

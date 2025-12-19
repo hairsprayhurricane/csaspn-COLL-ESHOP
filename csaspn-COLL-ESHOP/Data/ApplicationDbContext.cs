@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using csaspn_COLL_ESHOP.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using csaspn_COLL_ESHOP.Models;
+using System.Reflection.Emit;
 
 namespace csaspn_COLL_ESHOP.Data
 {
@@ -28,6 +29,18 @@ namespace csaspn_COLL_ESHOP.Data
                 .HasOne(p => p.Category)           // Каждый товар имеет одну категорию
                 .WithMany(c => c.Products)
                 .HasForeignKey(p => p.CategoryId);
+
+            builder.Entity<CartItem>(entity =>
+            {
+                entity.HasOne(d => d.Product)
+                    .WithMany()
+                    .HasForeignKey(d => d.ProductId)
+                    .OnDelete(DeleteBehavior.Cascade);
+                entity.HasOne(d => d.User)
+                    .WithMany()
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
         }
     }
 }
