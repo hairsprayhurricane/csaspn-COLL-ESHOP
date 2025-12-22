@@ -15,8 +15,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// Configure Identity
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
+// Configure Identity with custom paths
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     // Password settings
     options.Password.RequireDigit = false;
     options.Password.RequiredLength = 1;
@@ -35,9 +35,9 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
     // SignIn settings
     options.SignIn.RequireConfirmedAccount = false;
 })
-.AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>()
-.AddDefaultTokenProviders();
+.AddDefaultTokenProviders()
+.AddDefaultUI();
 
 // Configure cookie settings
 builder.Services.ConfigureApplicationCookie(options =>

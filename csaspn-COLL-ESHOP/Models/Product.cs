@@ -24,7 +24,7 @@ namespace csaspn_COLL_ESHOP.Models
         public decimal Price { get; set; }
 
         [Display(Name = "Изображение")]
-        public string? ImageUrl { get; set; } = "/images/plasceholder.jpg";
+        public string? ImageUrl { get; set; } = "/images/placeholder.jpg";
 
         [Display(Name = "Количество на складе")]
         [Range(0, 1000, ErrorMessage = "Количество должно быть от 1 до 1000")]

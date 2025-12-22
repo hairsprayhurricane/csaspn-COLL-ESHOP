@@ -1,5 +1,6 @@
 wwwroot\css\auth.css
 wwwroot\css\site.css
+wwwroot\images\placeholder.jpg
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery\dist\jquery.slim.js

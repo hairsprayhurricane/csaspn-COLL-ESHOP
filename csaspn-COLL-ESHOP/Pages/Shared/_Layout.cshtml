@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Интернет-магазин</title>
+    <title>@ViewData["Title"] - MEH-Shop</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/shopping-cart--v1.png">
@@ -35,7 +35,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center fw-bold" asp-page="/Index">
                     <i class="fas fa-shopping-cart me-2 text-primary"></i>
-                    <span class="d-none d-sm-inline">Интернет-магазин</span>
+                    <span class="d-none d-sm-inline">MEH-Shop</span>
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
@@ -122,7 +122,7 @@
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
-                                        <form class="form-inline" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                                        <form class="form-inline" method="post" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })">
                                             <button type="submit" class="dropdown-item">
                                                 <i class="fas fa-sign-out-alt me-2"></i>Выйти
                                             </button>
@@ -139,10 +139,10 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Login">Войти</a>
+                                <a class="nav-link" href="/Account/Login">Войти</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-page="/Account/Register">Регистрация</a>
+                                <a class="nav-link" href="/Account/Register">Регистрация</a>
                             </li>
                         }
                     </ul>
@@ -232,7 +232,7 @@
             <hr class="my-4">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    &copy; @DateTime.Now.Year Интернет-магазин. Все права защищены.
+                    &copy; @DateTime.Now.Year MEH-Shop. Все права защищены.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <a href="#" class="text-white-50 me-3 text-decoration-none">Политика конфиденциальности</a>

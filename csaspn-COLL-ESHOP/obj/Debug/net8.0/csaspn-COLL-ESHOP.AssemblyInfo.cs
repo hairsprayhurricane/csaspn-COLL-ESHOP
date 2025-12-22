@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csaspn-COLL-ESHOP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29a17b0a7a74714b278161e51399d1c13989d6a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d30694be96c0b9071dfadd720770ff78621f656")]
 [assembly: System.Reflection.AssemblyProductAttribute("csaspn-COLL-ESHOP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csaspn-COLL-ESHOP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
